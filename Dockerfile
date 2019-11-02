@@ -1,4 +1,4 @@
-FROM golang/apline as build
+FROM golang:alpine as build
 
 # This is expected to be overridden by looper
 ARG VERSION=0.0.0
