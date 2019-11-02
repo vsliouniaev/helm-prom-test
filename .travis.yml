@@ -4,7 +4,7 @@ services:
   - docker
 
 script:
-  - docker build -t vsliouniaev/helm-prom-test .
+  - docker build -t vsliouniaev/helm-prom-test --build-arg VERSION=$TRAVIS_TAG .
   - docker run vsliouniaev/helm-prom-test
 
 jobs:
@@ -15,4 +15,4 @@ jobs:
       stage: push tag
       deploy:
         provider: script
-        script: bash .ci/deploy
+        script: bash .ci/deploy $TRAVIS_TAG
