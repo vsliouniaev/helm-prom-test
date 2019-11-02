@@ -11,8 +11,10 @@ jobs:
   include:
     - if: branch = master AND tag IS blank
       stage: build
-    - if: branch = master AND tag IS present
+    - if: tag IS present
       stage: push tag
       deploy:
         provider: script
         script: bash .ci/deploy $TRAVIS_TAG
+        on:
+          tags: true
