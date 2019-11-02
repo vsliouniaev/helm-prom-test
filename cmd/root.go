@@ -37,7 +37,7 @@ func init() {
 	rootCmd.Flags()
 	rootCmd.PersistentFlags().StringVar(&logLevel, "log-level", "trace", "Log level: panic|fatal|error|warn|info|debug|trace")
 	rootCmd.PersistentFlags().StringVar(&logFmt, "log-format", "text", "Log format: text|json")
-	rootCmd.PersistentFlags().BoolVar(&logCaller, "log-caller", false, `Add file and line information to logs like 'file="pkg/spotlight/noopApi.go:35'`)
+	rootCmd.PersistentFlags().BoolVar(&logCaller, "log-caller", false, `Add file and line information to logs like 'file="prometheus/spotlight/noopApi.go:35'`)
 	rootCmd.PersistentFlags().BoolVar(&insecureSkipVerify, "insecure-skip-verify", false, "Skip validating certificates")
 }
 
@@ -48,5 +48,4 @@ func configureLogging(_ *cobra.Command, _ []string) {
 
 func rootCommand(cmd *cobra.Command, _ []string) {
 	log.Printf("%s %s %s\n", core.Version, core.BuildTime, runtime.Version())
-	os.Exit(1)
 }
