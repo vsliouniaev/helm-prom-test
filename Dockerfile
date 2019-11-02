@@ -2,7 +2,7 @@ FROM golang:alpine as build
 
 # This is expected to be overridden by looper
 ARG VERSION=0.0.0
-ARG PACKAGE="github.com/vsliouniaev/helm-test-image"
+ARG PACKAGE="github.com/vsliouniaev/helm-prom-test"
 
 WORKDIR /go/src/${PACKAGE}
 
