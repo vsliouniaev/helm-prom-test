@@ -5,12 +5,12 @@ services:
 
 script:
   - docker build -t vsliouniaev/helm-prom-test:latest .
-  - docker run vsliouniaev/helm-prom-test:latest
+  - docker run vsliouniaev/helm-prom-test
 
 jobs:
   include:
     - stage: deploy latest to docker hub
       if: branch = master AND type = push
       script:
-        - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-        - docker push vsliouniaev/helm-prom-test:latest
+        - echo "$DOCKER_PASSWORD" | docker login -u vsliouniaev --password-stdin
+        - docker push vsliouniaev/helm-prom-test
