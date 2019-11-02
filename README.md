@@ -1,0 +1,4 @@
+[![Build Status](https://travis-ci.org/vsliouniaev/helm-prom-test.svg?branch=master)](https://travis-ci.org/vsliouniaev/helm-prom-test)
+[![Go Report Card](https://goreportcard.com/badge/github.com/vsliouniaev/helm-prom-test)](https://goreportcard.com/report/github.com/vsliouniaev/helm-prom-test)
+[![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/vsliouniaev/helm-prom-test?sort=semver)](https://github.com/vsliouniaev/helm-prom-test/releases/latest)
+[![Docker Pulls](https://img.shields.io/docker/pulls/vsliouniaev/helm-prom-test?color=blue)](https://hub.docker.com/r/vsliouniaev/helm-prom-test/tags)
