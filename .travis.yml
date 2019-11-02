@@ -10,7 +10,8 @@ script:
 jobs:
   include:
     - stage: deploy latest to docker hub
-      if: branch = master AND type = push
-      script:
-        - echo "$DOCKER_PASSWORD" | docker login -u vsliouniaev --password-stdin
-        - docker push vsliouniaev/helm-prom-test
+      deploy:
+        provider: script
+        script: bash .ci/deploy
+      on:
+        branch: master
