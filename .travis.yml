@@ -9,16 +9,10 @@ script:
 
 jobs:
   include:
-    - stage: push to docker hub
+    - if: branch = master AND tag IS blank
+      stage: build
+    - if: branch = master AND tag IS present
+      stage: push tag
       deploy:
         provider: script
         script: bash .ci/deploy
-        on:
-          branch: master
-          tags: false
-    - stage: push tag to docker hub
-      deploy:
-        provider: script
-        script: bash .ci/deploy $TRAVIS_TAG
-        on:
-          tags: true
