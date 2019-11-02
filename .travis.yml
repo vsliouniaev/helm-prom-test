@@ -15,7 +15,10 @@ jobs:
         script: bash .ci/deploy
       on:
         branch: master
+        tags: false
     - stage: deploy tag to docker hub
       deploy:
         provider: script
         script: bash .ci/deploy $TAG
+      on:
+        tags: true
