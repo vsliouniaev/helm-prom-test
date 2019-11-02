@@ -9,16 +9,16 @@ script:
 
 jobs:
   include:
-    - stage: deploy latest to docker hub
+    - stage: push to docker hub
       deploy:
         provider: script
         script: bash .ci/deploy
-      on:
-        branch: master
-        tags: false
-    - stage: deploy tag to docker hub
+        on:
+          branch: master
+          tags: false
+    - stage: push tag to docker hub
       deploy:
         provider: script
         script: bash .ci/deploy $TRAVIS_TAG
-      on:
-        tags: true
+        on:
+          tags: true
