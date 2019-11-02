@@ -1,0 +1,8 @@
+language: go
+
+services:
+  - docker
+
+before_install:
+  - docker build -t vsliouniaev/helm-prom-test:latest .
+  - docker run vsliouniaev/helm-prom-test:latest
