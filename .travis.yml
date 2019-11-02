@@ -4,7 +4,7 @@ services:
   - docker
 
 script:
-  - docker build -t vsliouniaev/helm-prom-test:latest .
+  - docker build -t vsliouniaev/helm-prom-test .
   - docker run vsliouniaev/helm-prom-test
 
 jobs:
@@ -15,3 +15,7 @@ jobs:
         script: bash .ci/deploy
       on:
         branch: master
+    - stage: deploy tag to docker hub
+      deploy:
+        provider: script
+        script: bash .ci/deploy $TAG

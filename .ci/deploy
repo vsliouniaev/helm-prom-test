@@ -1,4 +1,11 @@
 #!/usr/bin/env bash
 
 echo "$DOCKER_PASSWORD" | docker login -u vsliouniaev --password-stdin
+
+if [ ! -z "$1" ]
+  then
+    docker tag vsliouniaev/helm-prom-test vsliouniaev/helm-prom-test:$1
+    docker push vsliouniaev/helm-prom-test:$1
+fi
+
 docker push vsliouniaev/helm-prom-test
