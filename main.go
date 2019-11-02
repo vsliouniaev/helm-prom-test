@@ -1,7 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"github.com/vsliouniaev/helm-prom-test/cmd"
+)
 
 func main() {
-	fmt.Println("Ran main")
+	cmd.Execute()
 }

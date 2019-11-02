@@ -1,5 +1,9 @@
 package core
 
+const (
+	Module = "github.com/vsliouniaev/helm-prom-test/"
+)
+
 var (
 	// Version is the current Semantic Version
 	Version = "0.0.1-dev"
