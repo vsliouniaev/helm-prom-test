@@ -19,6 +19,6 @@ jobs:
     - stage: deploy tag to docker hub
       deploy:
         provider: script
-        script: bash .ci/deploy $TAG
+        script: bash .ci/deploy $TRAVIS_TAG
       on:
         tags: true
